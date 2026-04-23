@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopX</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- BootStrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar px-4 py-2 shadow-sm">
+        <h4>🛍 <span class="text-primary fw-bold">ShopX</span></h4>
+
+        <input type="text" id="search" class="form-control w-25" placeholder="Search...">
+
+        <div class="d-flex gap-3 align-items-center">
+            <button class="cart-btn" onclick="toggleCart()">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count">0</span>
+            </button>
+            <div class="toggle" onclick="toggleTheme()"></div>
+        </div>
+    </nav>
+
+    <!-- MENU -->
+    <div class="menu px-4 py-2">
+        <span onclick="filterCategory('all')">All</span>
+        <span onclick="filterCategory('electronics')">Electronics</span>
+        <span onclick="filterCategory('fashion')">Fashion</span>
+        <span onclick="filterCategory('accessories')">Accessories</span>
+        <span onclick="filterCategory('home')">Home</span>
+        <span onclick="filterCategory('toy')">Toys</span>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="container mt-5">
+        <h4>New Products</h4>
+        <div class="row mt-3" id="product-list"></div>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+
+    <div id="cart" class="cart">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5>Your Cart</h5>
+            <button onclick="toggleCart()" class="btn btn-sm btn-danger">✖</button>
+        </div>
+
+        <div id="cart-items"></div>
+        <h5>Total: ₹<span id="total">0</span></h5>
+    </div>
+
+    <script src="JS/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+
+</html>
